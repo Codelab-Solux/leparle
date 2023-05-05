@@ -1,0 +1,133 @@
+{% load static %}
+<nav class="text-gray-600 py-4">
+  <div
+    class="w-full max-w-[1350px] mx-auto lg:flex lg:items-center justify-between"
+  >
+    <div class="flex items-center justify-between px-8 lg:px-0">
+      <a href="{% url 'home' %}">
+        <img
+          class="h-10"
+          src="{% static 'imgs/leparle-lng.png' %}"
+          alt="FIMO228"
+        />
+      </a>
+      <span class="text-xl cursor-pointer lg:hidden">
+        <i name="menu" onclick="toggleMenu(this)" class="fa-solid fa-bars"></i>
+      </span>
+    </div>
+    <div class="hidden mt-8 lg:flex lg:mt-2 items-center" id="navlinks">
+      <ul class="flex flex-col lg:flex-row gap-4 justify-between menu-list">
+        <a
+          href="{% url 'home' %}"
+          class="hover:text-black px-3 py-2 my-2 w-full"
+          >Home</a
+        >
+        <a
+          href="{% url 'about' %}"
+          class="hover:text-black px-3 py-2 my-2 w-full"
+          >About</a
+        >
+        <a
+          href="{% url 'courses' %}"
+          class="hover:text-black px-3 py-2 my-2 w-full"
+          >Courses</a
+        >
+        {% if user.role.sec_level >= 3 %}
+        <a
+          href="{% url 'users' %}"
+          class="hover:text-black px-3 py-2 my-2 w-full"
+          >Users</a
+        >
+        {% endif %}
+        <a
+          href="{% url 'blog' %}"
+          class="hover:text-black px-3 py-2 my-2 w-full"
+          >Blog</a
+        >
+      </ul>
+      {% if user.is_authenticated %}
+      <div
+          class="lg:ml-4"
+        >
+          <div class="relative">
+                <button
+              type="button"
+              class=""
+              name="dropdownBtn"
+              id="dropdownBtn"
+              aria-expanded="false"
+              aria-haspopup="true"
+              onclick="toggleDropdown(this)"
+            >
+            <i class="fa-solid fa-user text-red-400 text-2xl"></i>
+                      <!-- <img
+            class="hidden lg:block lg:h-6 rounded-full ring-offset-2 ring-4 hover:ring-white"
+            src="{% static 'imgs/rand.webp' %}"
+            alt="Rounded avatar"
+          /> -->
+          
+            </button>
+      
+            <div
+              class="p-2  bg-red-100 w-[200px] shadow-lg hidden absolute right-0 top-10 origin-top-left my-2 z-30 rounded-lg flex flex-col"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="user-menu-button"
+              tabindex="-1"
+              id="dropdownMenu"
+            >
+              <a href="{% url 'user_profile' user.id  %}"
+                class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
+                role="menuitem"
+                tabindex="-1"
+                id="user-menu-item-0"
+                ><i class="fa-solid fa-user lg:mr-2"></i>My profile</a>
+          
+              <a
+                href="#"
+                class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
+                role="menuitem"
+                tabindex="-1"
+                id="user-menu-item-1"
+                ><i class="fa-solid fa-gear lg:mr-2"></i>Settings</a>
+              {% if user.is_superuser %}
+              <a
+                class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
+                href="{% url 'admin:index' %}"
+                ><i class="fa-solid fa-lock lg:mr-2"></i> <span class="hidden lg:inline ">Super Admin</a></span>
+              {% endif %}
+              
+              <a
+                href="{% url 'logout' %}"
+                class="inline px-2 lg:px-4 py-2 text-sm text-red-700 hover:bg-red-700 hover:text-white rounded-md"
+                role="menuitem"
+                tabindex="-1"
+                id="user-menu-item-2"
+                ><i class="fa-solid fa-right-from-bracket lg:mr-2"></i>Logout</a>
+          
+            </div>
+          </div>
+      </div>
+      {% else %}
+      <a
+      class="ml-4 px-4 py-1 rounded-full border border-2 border-white bg-red-400 text-white transition ease-in duration-200"
+      href="{% url 'login' %}"
+      >Login</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu(e) {
+    e.name === "menu"
+      ? ((e.name = "close"), navlinks.classList.remove("hidden"))
+      : ((e.name = "menu"), navlinks.classList.add("hidden"));
+  }
+
+  function toggleDropdown(e) {
+    e.name === "dropdownBtn"
+      ? ((e.name = "close"), dropdownMenu.classList.remove("hidden"))
+      : ((e.name = "dropdownBtn"), dropdownMenu.classList.add("hidden"));
+  }
+</script>

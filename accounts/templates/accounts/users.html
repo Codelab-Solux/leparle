@@ -1,0 +1,89 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<div class="px-8 lg:px-0 max-w-[1350px] mx-auto">
+  <div class="mb-4 border border-4 border-blue-950 p-4 rounded-xl">
+    <h1
+      class="mb-2 text-black text-lg font-bold bg-blue-100 px-4 py-2 rounded-lg"
+    >
+      Recently added users
+    </h1>
+    <div class="flex flex-col md:flex-row justify-between items-start">
+      <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        {% for e in users %}
+        <a href="{% url 'user_profile' e.id  %}">
+          <div class="p-4 bg-blue-100 h-100 rounded-md hover:shadow-md">
+            <h3 class="font-bold text-black text-md">
+              {{e.first_name}} {{e.last_name}}
+            </h3>
+            <h3 class="font-bold text-blue-950 text-sm">@{{e.username}}</h3>
+            <h3 class="text-sm">{{e.email}}</h3>
+            <h3 class="text-sm">{{e.tel}}</h3>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      <img
+        class="h-80"
+        src="{% static 'imgs/find-user-amico.png' %}"
+        alt="welcome image"
+      />
+    </div>
+  </div>
+  <div class="mt-6 flex flex-col lg:flex-row justify-between gap-8">
+    <div class="flex flex-col w-full">
+      <h3 class="mb-2 text-blue-950 text-lg font-bold">Users Table</h3>
+      <div class="overflow-auto rounded-xl text-sm bg-gray-50">
+        <table class="w-full text-left db-table">
+          <thead class="bg-blue-950 text-white">
+            <tr>
+              <th class="p-4 text-sm">Username</th>
+              <th class="p-4 text-sm">Firstname</th>
+              <th class="p-4 text-sm">Lastname</th>
+              <th class="p-4 text-sm">Email</th>
+              <th class="p-4 text-sm">Telephone</th>
+              <th class="p-4 text-sm">Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for e in users %}
+            <tr
+              class="text-gray-500 hover:text-black cursor-pointer transition-all duration-50"
+            >
+              <td class="p-3">{{e.username}}</td>
+              <td class="p-3">{{e.first_name}}</td>
+              <td class="p-3">{{e.last_name}}</td>
+              <td class="p-3">{{e.email}}</td>
+              <td class="p-3">{{e.tel}}</td>
+              <td class="p-3">{{e.role}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- user creation form -->
+    {% if request.user.role.sec_level >= 3 %}
+    <div class="flex flex-col xs:w-full lg:w-2/6">
+      <h3 class="mb-2 text-black text-lg font-bold">Add a new user</h3>
+      <form
+        class="p-4 w-full bg-gray-100 rounded-lg text-sm"
+        method="POST"
+        action=""
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %} {% for field in form %}
+        <div>
+          <h3 class="mb-1">{{field.label}}</h3>
+          {{field}}
+        </div>
+        {% endfor %}
+        <input
+          class="mt-4 px-4 py-2 bg-blue-950 hover:bg-red-400 text-white rounded-md cursor-pointer"
+          type="submit"
+          value="Save"
+        />
+      </form>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

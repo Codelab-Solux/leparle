@@ -1,0 +1,46 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+
+<!--------------------------------------- hero section --------------------------------------->
+
+<section class="mt-20 h-full">
+  <div
+    class="px-8 lg:px-0 max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2"
+  >
+    <article class="mb-4 mt-40 flex flex-col justify-between">
+      <h1 class="mb-4 text-5xl text-blue-950 font-thin">Qui sommes nous?</h1>
+      <p>
+        <span class="text-5xl text-blue-950 font-black">Leparle</span>
+        est une plateforme conçue pour aider les professionnels de différents
+        secteurs d’activités à améliorer leur anglais dans un contexte
+        professionnel. Nous proposons une grande variété de cours, allant de
+        l'anglais des affaires au vocabulaire spécifique à certaines industries,
+        tels que le marketing, la finance, les ressources humaines, la médecine,
+        la technologie, etc. Les cours sont organisés par niveau de compétence
+        en anglais, de débutant à avancé, et sont adaptés aux besoins
+        spécifiques des apprenants. Chaque cours comprend des leçons, des
+        exercices pratiques, des quiz, des tests et des activités interactives
+        pour aider les apprenants à développer leurs compétences en anglais. Les
+        cours sont créés par des enseignants expérimentés et sont régulièrement
+        mis à jour pour répondre aux besoins changeants du monde professionnel.
+        En plus des cours, notre plateforme propose également des
+        fonctionnalités de suivi et de progression pour les apprenants, ainsi
+        que des évaluations régulières pour mesurer leur niveau d'anglais et
+        leur progression. Nous offrons également un soutien personnalisé grâce à
+        notre équipe de formateurs et de tuteurs, qui sont disponibles pour
+        aider les apprenants à résoudre les problèmes et à répondre à leurs
+        questions. Notre plateforme est accessible en ligne depuis n'importe
+        quel appareil connecté à Internet, ce qui permet aux apprenants de
+        suivre les cours en tout lieu et à tout moment qui leur convient le
+        mieux. Notre plateforme de formation en anglais professionnel offre une
+        approche pratique et personnalisée pour améliorer les compétences en
+        anglais des professionnels dans un contexte professionnel.
+      </p>
+    </article>
+    <img
+      class="h-[600px] rounded-md object-contain"
+      src="{% static 'imgs/company-amico.png' %}"
+      alt="hero image"
+    />
+  </div>
+</section>
+{% endblock %}

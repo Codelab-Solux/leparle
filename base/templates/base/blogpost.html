@@ -1,0 +1,89 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<div class="px-8">
+  <!--------------------------------------- hero section --------------------------------------->
+
+  <!-- {% include 'secbar.html' %} -->
+
+  <!--------------------------------------- mini navbar --------------------------------------->
+
+  <nav
+    class="w-full max-w-[1350px] mx-auto py-2 flex gap-2 items-center text-xs"
+  >
+    <a
+      class="p-2 hover:bg-gray-100 hover:text-blue-950 rounded-full transition ease-in duration-200"
+      href="{% url 'home' %}"
+      ><i class="fa-solid fa-house"></i>
+    </a>
+    /
+    <a
+      class="hover:text-blue-950 hover:underline transition ease-in duration-200"
+      href="{% url 'blog' %}"
+      >Blog</a
+    >
+    /
+    <span class="text-blue-950 font-black">{{curr_post.title}}</span>
+  </nav>
+
+  <!--------------------------------------- current course --------------------------------------->
+  <div
+    class="w-full max-w-[1350px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-8"
+  >
+    <div class="flex flex-col w-full">
+      {% if not item.image %}
+      <img
+        class="h-80 w-full rounded-l-xl object-cover"
+        src="{% static 'imgs/leparle-logo.png' %}"
+        alt="welcome image"
+      />
+      {% else %}
+      <img
+        class="h-40 w-full rounded-l-xl object-cover"
+        src="{{item.image.url}}"
+        alt="welcome image"
+      />
+      {% endif %}
+      <div class="py-4 flex flex-col justify-between">
+        <h4 class="text-blue-950 text-xl font-bold">{{curr_post.title}}</h4>
+        <!-- <p class="py-2 text-md">{{curr_post.subtitle}}</p> -->
+        <p class="py-2 text-md">{{curr_post.article}}</p>
+      </div>
+    </div>
+
+    <!--------------------------------------- related blogposts --------------------------------------->
+
+    <div class="">
+      <h3 class="mb-2 mx-auto text-gray-700 text-2xl font-black">
+        Other blogposts
+      </h3>
+      <div class="flex flex-col justify-between gap-2 w-full">
+        {% for item in rel_posts %}
+        <a href="{% url 'blogpost' item.id  %}">
+          <div
+            class="p-4 flex justify-between items-center gap-4 bg-red-100 hover:shadow-md rounded-md group overflow-hidden"
+          >
+            {% if not item.image %}
+            <img
+              class="h-20 w-20 rounded-l-xl object-cover"
+              src="{% static 'imgs/leparle-blu.png' %}"
+              alt="welcome image"
+            />
+            {% else %}
+            <img
+              class="h-20 w-20 rounded-l-xl object-cover"
+              src="{{item.image.url}}"
+              alt="welcome image"
+            />
+            {% endif %}
+            <div class="flex flex-col">
+              <h4 class="text-black font-bold">{{item.title}}</h4>
+              <p class="pt-2 text-md">{{item.article|truncatechars:50}}</p>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

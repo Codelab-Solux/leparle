@@ -1,0 +1,116 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<!--------------------------------------- hero section --------------------------------------->
+
+<section class="mt-20 h-100 md:h-[600px]">
+  <div
+    class="px-8 lg:px-0 max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
+  >
+    <div class="flex flex-col">
+      <article class="mb-4 mt-40 flex flex-col justify-between">
+        <h1 class="mb-4 text-5xl font-light">
+          Learn to
+          <span class="italic text-blue-950 font-black"> Speak English </span>
+          <br />
+          like a pro.
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
+          doloremque explicabo! Ipsam perferendis temporibus quod magnam nisi
+          cum. Aspernatur, delectus?
+        </p>
+        <!------------------ search form ------------------->
+      </article>
+      <form
+        id="search_box"
+        class="mt-2 w-full border border-2 border-red-400 rounded-full flex flex-row max-w-xl justify-between items-fill"
+      >
+        <input
+          type="text"
+          name="query"
+          id="querier"
+          required
+          class="px-6 py-0 rounded-l-full bg-white text-black w-full h-full"
+          placeholder="Find courses..."
+        />
+        <button
+          class="group px-8 py-2 text-sm bg-red-400 hover:bg-blue-950 text-white rounded-r-full"
+          type="submit"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <a
+        href="#courses"
+        class="mt-4 px-8 py-2 rounded-full flex justify-between items-center text-white bg-blue-950 w-[200px] group"
+        >Explore<i class="hidden fa-solid fa-arrow-down group-hover:inline"></i
+      ></a>
+    </div>
+    <img
+      class="h-[600px] rounded-md object-contain"
+      src="{% static 'imgs/eng-teacher-amico.png' %}"
+      alt="hero image"
+    />
+  </div>
+</section>
+
+<!--------------------------------------- who use us? --------------------------------------->
+
+<div class="py-10 bg-red-50 w-full text-center">
+  <p class="mx-auto text-gray-500 text-2xl font-thin italic">
+    Tested and trusted by companies.
+  </p>
+</div>
+
+<!--------------------------------------- courses --------------------------------------->
+<section id="courses" class="py-20 bg-white w-full text-left">
+  <div class="px-4 lg:px-0 max-w-[1350px] mx-auto">
+    <div class="mb-4 flex justify-between">
+      <h3 class="text-gray-700 text-2xl font-bold">Courses for you</h3>
+      <a class="text-blue-950 hover:font-bold" href="{% url 'courses' %}"
+        >See more</a
+      >
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for item in courses %}
+      <a href="{% url 'course' item.id  %}">
+        <div class="flex flex-col bg-blue-950 hover:shadow-md rounded-md group">
+          {% if item.video %}
+          <video
+            class="h-[300px] rounded-t-md object-contain"
+            poster="{% static 'imgs/leparle-gris-lng.png' %}"
+            controls="controls"
+            preload="metadata"
+          >
+            <source src="{{item.video.url}}" type="video/mp4" />
+          </video>
+          {% endif %}
+          <div class="p-4 flex flex-col justify-between">
+            <h4 class="text-white text-xl font-bold">{{item.title}}</h4>
+            <p class="py-2 text-gray-300 text-md">
+              {{item.subtitle|truncatechars:40}}
+            </p>
+          </div>
+        </div> </a
+      >{% endfor %}
+    </div>
+  </div>
+</section>
+
+<!--------------------------------------- explore --------------------------------------->
+
+<div
+  class="p-10 lg:mx-auto lg:mx-0 bg-blue-950 flex flex-col md:flex-row h-80 w-full max-w-[1350px] lg:rounded-xl"
+>
+  <article class="flex flex-col">
+    <h4 class="mb-2 mx-auto text-3xl text-white font-bold">
+      Apprenez à parler l'anglais comme un professionel avec nous.
+    </h4>
+    <a
+      href="{% url 'courses' %}"
+      class="mt-4 px-8 py-2 rounded-full flex justify-between items-center text-blue-950 bg-white w-[200px] group"
+      >Explorez<i class="hidden fa-solid fa-arrow-right group-hover:inline"></i
+    ></a>
+  </article>
+</div>
+
+{% endblock %}

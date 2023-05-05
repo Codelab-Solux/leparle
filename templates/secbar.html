@@ -1,0 +1,26 @@
+<div
+  class="text-sm font-medium text-center text-gray-500 border-b border-gray-200"
+>
+  <ul
+    class="mx-auto w-full max-w-[1350px] flex flex-wrap gap-8"
+    id="myTab"
+    data-tabs-toggle="#myTabContent"
+    role="tablist"
+  >
+    {% for sec in sector %}
+    <li class="mr-2">
+      <a
+        href="{% url 'home' %}"
+        class="inline-block py-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+        id="{{sec.name}}-tab"
+        data-tabs-target="#{{sec.name}}"
+        type="button"
+        role="tab"
+        aria-controls="{{sec.name}}"
+      >
+        {{sec.name}}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</div>
