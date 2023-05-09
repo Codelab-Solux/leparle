@@ -1,0 +1,947 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-05-04T13:08:33.459Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Admin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-05-04T13:09:08.022Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Manager",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-05-04T13:09:45.984Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "Teacher",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-05-04T13:09:54.784Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Student",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-05-04T13:16:59.321Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "admin@app.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Role\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-05-04T14:21:21.387Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Banking and Finance",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-05-04T14:23:21.665Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Information Technology (I.T)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-05-04T14:56:49.321Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "What is banking?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-05-04T14:57:32.199Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Introduction to Information Technology I.T",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-05-04T14:57:57.003Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Medecine",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-05-04T14:58:27.945Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "What is Medicine",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-05-04T14:58:41.254Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Medicine",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2023-05-04T15:42:25.278Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Intro to Information Technology",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2023-05-04T17:24:05.712Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "What is banking?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Article\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2023-05-04T17:31:24.662Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "What is Medicine?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Overview\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2023-05-04T17:32:08.139Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "What is banking?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Subtitle\", \"Overview\", \"Article\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2023-05-04T17:34:57.001Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Intro to Information Technology",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Subtitle\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2023-05-04T17:35:24.301Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Intro to Information Technology",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Subtitle\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2023-05-04T17:35:56.266Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "What is Medicine?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Subtitle\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2023-05-05T16:54:50.268Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Why did the economy crash in 2008?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2023-05-05T18:04:00.109Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "What is anorexia nervosa?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2023-05-05T18:10:06.978Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "What is Artificial Intelligence?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2023-05-09T13:56:10.858Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Information Technology",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add custom user",
+      "content_type": 6,
+      "codename": "add_customuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change custom user",
+      "content_type": 6,
+      "codename": "change_customuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete custom user",
+      "content_type": 6,
+      "codename": "delete_customuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view custom user",
+      "content_type": 6,
+      "codename": "view_customuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add role",
+      "content_type": 7,
+      "codename": "add_role"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change role",
+      "content_type": 7,
+      "codename": "change_role"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete role",
+      "content_type": 7,
+      "codename": "delete_role"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view role",
+      "content_type": 7,
+      "codename": "view_role"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add sector",
+      "content_type": 8,
+      "codename": "add_sector"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change sector",
+      "content_type": 8,
+      "codename": "change_sector"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete sector",
+      "content_type": 8,
+      "codename": "delete_sector"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view sector",
+      "content_type": 8,
+      "codename": "view_sector"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add course",
+      "content_type": 9,
+      "codename": "add_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change course",
+      "content_type": 9,
+      "codename": "change_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete course",
+      "content_type": 9,
+      "codename": "delete_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view course",
+      "content_type": 9,
+      "codename": "view_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add blogpost",
+      "content_type": 10,
+      "codename": "add_blogpost"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change blogpost",
+      "content_type": 10,
+      "codename": "change_blogpost"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete blogpost",
+      "content_type": 10,
+      "codename": "delete_blogpost"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view blogpost",
+      "content_type": 10,
+      "codename": "view_blogpost"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": { "app_label": "admin", "model": "logentry" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": { "app_label": "auth", "model": "permission" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": { "app_label": "auth", "model": "group" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": { "app_label": "contenttypes", "model": "contenttype" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": { "app_label": "sessions", "model": "session" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": { "app_label": "accounts", "model": "customuser" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": { "app_label": "accounts", "model": "role" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": { "app_label": "base", "model": "sector" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": { "app_label": "base", "model": "course" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": { "app_label": "base", "model": "blogpost" }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "cts1bcbw1fmdb4ix5xav38s0boc5plpp",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlle_1ampOcM1q4_OIAcKU4qxN0hUgpo38y8l4i0rS1uoyxxyuIsQJx-N6b0KH0H-U79Nss093WZWO6KPOiQ1zmX5-Vw_w4ajfatXc1oEQMnROPQ-upsQigKmIz21gbUoNCo4Mix1zVQYiBjyDAAgXh_ALmJNtI:1pvPGE:zXguc5__mcbeRQTNmMlGmgydF2QChOEwepf8GRNHoYI",
+      "expire_date": "2023-05-20T21:16:10.001Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "r27loksgk45mvkga469gjbm84xh36wgl",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlle_1ampOcM1q4_OIAcKU4qxN0hUgpo38y8l4i0rS1uoyxxyuIsQJx-N6b0KH0H-U79Nss093WZWO6KPOiQ1zmX5-Vw_w4ajfatXc1oEQMnROPQ-upsQigKmIz21gbUoNCo4Mix1zVQYiBjyDAAgXh_ALmJNtI:1pw59L:fgmLIcyM9p0L-kBHCFmbaG9DzCUfDVI0QFBDWF0vXO0",
+      "expire_date": "2023-05-22T17:59:51.752Z"
+    }
+  },
+  {
+    "model": "accounts.role",
+    "pk": 1,
+    "fields": { "name": "Admin", "description": "", "sec_level": 3 }
+  },
+  {
+    "model": "accounts.role",
+    "pk": 2,
+    "fields": { "name": "Manager", "description": "", "sec_level": 2 }
+  },
+  {
+    "model": "accounts.role",
+    "pk": 3,
+    "fields": { "name": "Teacher", "description": "", "sec_level": 1 }
+  },
+  {
+    "model": "accounts.role",
+    "pk": 4,
+    "fields": { "name": "Student", "description": "", "sec_level": 0 }
+  },
+  {
+    "model": "accounts.customuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$8uoq8lnvmb5ItYbsUpymNw$ErpRNsZxmPh8JPfY93h2mSDUK9uQULuQdFBR3xjnE7I=",
+      "last_login": "2023-05-08T17:59:51.744Z",
+      "email": "admin@app.com",
+      "username": "Admin",
+      "first_name": "Komal",
+      "last_name": "Tech",
+      "phone": null,
+      "role": 1,
+      "sector": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.customuser",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$CdPrCqyAfblGsnHh9Xi0YZ$b5dnlvO+1DT8Y2HTQ0MJEMwqGb01AbBF6y5LrIr6v3w=",
+      "last_login": null,
+      "email": "mensanvi@gmail.com",
+      "username": "M_Agou",
+      "first_name": "Agou",
+      "last_name": "Mensanvi",
+      "phone": "97131717",
+      "role": 1,
+      "sector": null,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.customuser",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$sSv49221pd5rjP3y9lfeQw$FifBxIMPt5uzUflkug7nasMcmnN5ZslCobhgW7x8XcI=",
+      "last_login": null,
+      "email": "adama@aol.com",
+      "username": "A_Tito",
+      "first_name": "Adama",
+      "last_name": "Tito",
+      "phone": "98963232",
+      "role": 3,
+      "sector": 1,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.customuser",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$j3tqVwjSrRlGdUpVJvlTP2$ySOaGd09vVudrhdEQsogYlVrtqO3KUEaoYtSx0Lo4GM=",
+      "last_login": "2023-05-06T14:31:32.751Z",
+      "email": "agnes@aol.com",
+      "username": "A_agnes",
+      "first_name": "Agla",
+      "last_name": "Agnes",
+      "phone": "98963231",
+      "role": 4,
+      "sector": 2,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.customuser",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$HyS55QzVoHG2BQF7yxqofy$MVBqftbResLvDyQjivdMnV7b/Y2md91N9RtjlqZsRm8=",
+      "last_login": "2023-05-06T13:38:40.540Z",
+      "email": "eden@aol.com",
+      "username": "0Prime",
+      "first_name": "Anyim",
+      "last_name": "Eden",
+      "phone": "97998621",
+      "role": 4,
+      "sector": 3,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "base.sector",
+    "pk": 1,
+    "fields": { "name": "Banking and Finance", "description": "", "image": "" }
+  },
+  {
+    "model": "base.sector",
+    "pk": 2,
+    "fields": {
+      "name": "Information Technology",
+      "description": "",
+      "image": ""
+    }
+  },
+  {
+    "model": "base.sector",
+    "pk": 3,
+    "fields": { "name": "Medicine", "description": "", "image": "" }
+  },
+  {
+    "model": "base.course",
+    "pk": 1,
+    "fields": {
+      "sector": 1,
+      "title": "What is banking?",
+      "subtitle": "In this video, you will learn the basic info about banking.",
+      "overview": "In this video, you will learn the basic info about banking.\r\nBanking is an industry that handles cash, credit, and other financial transactions for individual consumers and businesses alike. Banking provides the liquidity needed for families and businesses to invest in the future, and is one of the key drivers of the U.S. economy.",
+      "article": "",
+      "video": "videos/banking.mp4",
+      "document": "",
+      "is_popular": false,
+      "date_added": "2023-05-05T16:22:23.095Z"
+    }
+  },
+  {
+    "model": "base.course",
+    "pk": 2,
+    "fields": {
+      "sector": 2,
+      "title": "Intro to Information Technology",
+      "subtitle": "What is Information Technology, and how doe it affect our lives?",
+      "overview": "",
+      "article": "",
+      "video": "videos/it-explained.mp4",
+      "document": "",
+      "is_popular": false,
+      "date_added": "2023-05-05T16:22:23.095Z"
+    }
+  },
+  {
+    "model": "base.course",
+    "pk": 3,
+    "fields": {
+      "sector": 3,
+      "title": "What is Medicine?",
+      "subtitle": "Do you really know how your body works?",
+      "overview": "Medicine is the science[1] and practice[2] of caring for a patient, managing the diagnosis, prognosis, prevention, treatment, palliation of their injury or disease, and promoting their health. Medicine encompasses a variety of health care practices evolved to maintain and restore health by the prevention and treatment of illness. Contemporary medicine applies biomedical sciences, biomedical research, genetics, and medical technology to diagnose, treat, and prevent injury and disease, typically through pharmaceuticals or surgery, but also through therapies as diverse as psychotherapy, external splints and traction, medical devices, biologics, and ionizing radiation, amongst others.[3]",
+      "article": "",
+      "video": "videos/medicine.mp4",
+      "document": "",
+      "is_popular": false,
+      "date_added": "2023-05-05T16:22:23.095Z"
+    }
+  },
+  {
+    "model": "base.blogpost",
+    "pk": 1,
+    "fields": {
+      "sector": 1,
+      "title": "Why did the economy crash in 2008?",
+      "subtitle": null,
+      "article": "All of us are aware of the financial crisis, also known as the recession, that occurred in 2008.\r\n\r\nThe Global Financial Crisis of 2008 is widely regarded as the worst financial catastrophe since the 1930s Great Depression.\r\n\r\nIt started in 2007 with the subprime mortgage crisis in the United States. The collapse of the major investment bank Lehman Brothers on September 15, 2008, developed into a full-fledged international banking crisis.\r\n\r\nOrigin of crisis\r\n\r\nThe collapse of the US housing bubble, which peaked in FY 2006-2007, was the primary and immediate cause of the financial crisis.\r\n\r\nBut it all began after the terrorist attacks of September 11, 2001. As a result of the US economy entering a recession, the Federal Reserve System (Fed) reduced its interest rate to 1%.\r\n\r\nSince 1% is such a low-interest rate, fixed income investors who used to buy US Treasury bills became dissatisfied with the rates they were receiving and began searching for other investment options.\r\n\r\nInvestment banks in the United States became aware of the situation and began to apply some of their financial wizardries to mortgages.\r\n\r\nMortgages were first securitised into Mortgage-Backed Securities (MBS), a form of asset-backed securities, by investment banks in the United States.\r\n\r\nAn MBS is a series of various mortgages geographically scattered to increase diversification and thereby lower risk.\r\n\r\nInvestment banks use MBS to keep future returns from such investments as high as possible while lowering risk.\r\n\r\nWorld-wide effects\r\n\r\nAlmost no nation in the world, developing or developed, has been spared the effects of the US financial crisis.\r\n\r\nIn August 2007, it became clear that the stock system alone could not overcome the US subprime crisis, and the problems had spread beyond the countryÆs borders.\r\n\r\nThe inter-banking market fully shut down, owing to widespread fear of the unknown among banks worldwide.\r\n\r\nDue to a liquidity shortage, Northern Rock, a British bank, had to approach the Bank of England for emergency funding.\r\n\r\nAt that time, central banks and governments all over the world had begun to band together to avert a global financial crisis.\r\n\r\nAt the end of 2008, all of the worldÆs major economies were either in or fighting to stay out of recession.\r\n\r\nThe World Bank predicts a 0.9 per cent rise in global economic activity in 2009, the slowest growth rate since records began in 1970.",
+      "image": "",
+      "date_added": "2023-05-05T16:52:22Z"
+    }
+  },
+  {
+    "model": "base.blogpost",
+    "pk": 2,
+    "fields": {
+      "sector": 3,
+      "title": "What is anorexia nervosa?",
+      "subtitle": null,
+      "article": "Anorexia nervosa is an eating disorder and a serious mental illness. A person with anorexia nervosa restricts their energy intake, has a distorted body image and an intense fear of gaining weight. The restriction in energy intake can cause a significant amount of weight loss in a short period of time and may result in a person having a very low weight.\r\n\r\nAnorexia nervosa is most common in women and usually starts in adolescence. It is the third most common chronic illness in girls and young women and affects up to 1 in 200 girls. One in 11 people who develop anorexia after puberty are male.\r\n\r\nPeople with anorexia nervosa may see themselves as being heavy or large when they are actually severely underweight. Their perceived body weight or shape can have a significant influence on how they evaluate or feel about themselves. Out of a fear of gaining weight, they follow restrictive diets and may undertake harsh, excessive exercise routines.\r\n\r\nAnorexia falls into 3 general types:\r\n\r\nRestricting type\r\nPeople with this type of anorexia nervosa place severe restrictions on the quantity and type of food they consume.\r\n\r\nThis could include counting calories, skipping meals, restricting certain foods (such as carbohydrates) and following obsessive rules, such as only eating foods of a certain colour.\r\n\r\nThese behaviours may be accompanied by excessive exercise.\r\n\r\nBinge eating/purging type\r\nPeople with this type of anorexia also place severe restrictions on the food they eat. But this is accompanied by binge eating and then purging.\r\n\r\nWhen binge eating, someone eats a large amount of food and has feelings of being out of control. The person then 'compensates' for this eating by purging the food through vomiting or misusing laxatives, diuretics or enemas.\r\n\r\nAtypical anorexia nervosa\r\nAtypical anorexia nervosa is a subtype of other specified feeding or eating disorders (OSFED) in which a personÆs body weight is still in the normal weight range despite having significant weight loss from their restricted energy intake. They also have a distorted body image and an intense fear of gaining weight. Apart from the normal weight range, they have all the other characteristics, and similar complications, of anorexia nervosa.\r\n\r\nWhat are the symptoms of anorexia nervosa?\r\nThe most obvious sign that someone has anorexia nervosa may be that they are underweight, they have lost weight very quickly, or their weight fluctuates dramatically.\r\n\r\nA BMI of less than 18.5 is considered underweight. But being very thin is not the only sign of anorexia. There are also other signs that a person may have anorexia nervosa.\r\n\r\nPhysical signs\r\nloss of menstruation in women, decreased libido (sex drive) in men\r\nfainting or dizziness\r\nalways feeling cold\r\nbloating, constipation or developing food intolerances\r\npoor sleep\r\nlethargy and tiredness\r\nlooking pale\r\ndry, yellow skin\r\nsunken eyes\r\nfine hair on the face and body\r\nPsychological signs\r\nbeing preoccupied with eating, food, body shape and weight\r\nbeing extremely dissatisfied with their body, or having a distorted body image\r\nbeing anxious and/or irritable at meal times\r\ndepression and anxiety\r\ndifficulty concentrating\r\nhaving rigid thoughts about food\r\nlow self-esteem and perfectionism\r\nBehavioural signs\r\nintense dieting (counting calories, avoiding foods)\r\ndeliberately misusing laxatives, appetite suppressants, enemas and diuretics\r\nobsessive behaviour around body weight or shape (weighing themselves obsessively, pinching waist or wrists)\r\nbinge eating\r\navoiding eating with other people and secrecy around food\r\nwanting to be alone\r\nexcessive exercising\r\nobsessive rituals around food\r\npreoccupation with cooking, recipes and nutrition\r\nself-harm, substance abuse or suicide attempts",
+      "image": "",
+      "date_added": "2023-05-05T18:03:25Z"
+    }
+  },
+  {
+    "model": "base.blogpost",
+    "pk": 3,
+    "fields": {
+      "sector": null,
+      "title": "What is Artificial Intelligence?",
+      "subtitle": null,
+      "article": "Artificial intelligence (AI) broadly refers to any human-like behavior displayed by a machine or system. In AIÆs most basic form, computers are programmed to ômimicö human behavior using extensive data from past examples of similar behavior. This can range from recognizing differences between a cat and a bird to performing complex activities in a manufacturing facility.\r\n\r\nLearn more about Artificial Intelligence\r\nWhether you are talking about deep learning, strategic thinking, or another species of AI, the foundation of its use is in situations that require lightning-fast responses. With AI, machines can work efficiently and analyze vast amounts of data in the blink of an eye, solving problems through supervised, unsupervised, or reinforced learning.\r\n\r\nEarly days of AI\r\nWhile its early forms enabled computers to play games like checkers against humans, AI is now part of our daily lives. We have AI solutions for quality control, video analytics, speech-to-text (natural language processing), and autonomous driving, as well as solutions in healthcare, manufacturing financial services, and entertainment.\r\n\r\nRelated HPE Solutions, Products, or Services\r\nAI and Data Transformation Services\r\n\r\nAI Solutions\r\n\r\nPowerful tool for businesses and organizations\r\nArtificial intelligence can be a very powerful tool for both large corporations generating significant data and small organizations that need to process their calls with customers more effectively. AI can streamline business processes, complete tasks faster, eliminate human error, and much more.\r\n\r\nAI at the edge\r\nHPE is pioneering a new frontier of AI by harnessing data and gaining insights at the edge. We empower success with real-time analytical AI for automation, prediction, and control to help you realize the value of your data faster and leverage limitless opportunity for innovation, growth, and success.",
+      "image": "",
+      "date_added": "2023-05-05T18:08:01Z"
+    }
+  }
+]
