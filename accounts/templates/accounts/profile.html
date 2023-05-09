@@ -74,12 +74,19 @@
       {{field}}
     </div>
     {% endfor %}
-
-    <input
-      class="mt-4 px-4 py-4 bg-blue-950 hover:bg-red-400 text-white rounded-md cursor-pointer"
-      type="submit"
-      value="Enregistrer"
-    />
+    <div class="flex gap-8 items-end">
+      <input
+        class="mt-4 px-4 py-4 bg-blue-950 hover:bg-blue-800 text-white rounded-md cursor-pointer"
+        type="submit"
+        value="Save"
+      />
+      <a
+        class="bg-white p-4 rounded-md hover:bg-red-400 hover:text-white"
+        href="{{request.META.HTTP_REFERER}}"
+      >
+        Cancel
+      </a>
+    </div>
   </form>
   {% endif %}
 </div>

@@ -18,8 +18,8 @@ class CourseForm(forms.ModelForm):
             'sector': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
             'title': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
             'subtitle': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-            'overview': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-            'article': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'overview': forms.Textarea(attrs={"rows": "5", 'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'article': forms.Textarea(attrs={"rows": "10", 'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
         }
 
 class BlogpostForm(forms.ModelForm):
@@ -30,6 +30,6 @@ class BlogpostForm(forms.ModelForm):
             'sector': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
             'title': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
             'subtitle': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-            'article': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'article': forms.Textarea(attrs={"rows": "10",'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
             'role': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
         }

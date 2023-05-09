@@ -41,17 +41,25 @@
             {{field}}
           </div>
           {% endfor %}
-          <input
-            class="mt-4 px-4 py-2 bg-blue-950 hover:bg-red-400 text-white rounded-md cursor-pointer"
-            type="submit"
-            value="Save"
-          />
+          <div class="flex gap-8 items-end">
+            <input
+              class="mt-4 px-4 py-4 bg-blue-950 hover:bg-blue-800 text-white rounded-md cursor-pointer"
+              type="submit"
+              value="Save"
+            />
+            <a
+              class="bg-white p-4 rounded-md hover:bg-red-400 hover:text-white"
+              href="{{request.META.HTTP_REFERER}}"
+            >
+              Cancel
+            </a>
+          </div>
         </form>
         <div>
           <img
             class="w-full h-80 rounded-md object-cover"
             src="{% static 'imgs/pana-learner.png' %}"
-            alt="welcome image"
+            alt="learner image"
           />
         </div>
       </div>
@@ -74,17 +82,30 @@
             {{field}}
           </div>
           {% endfor %}
-          <input
-            class="mt-4 px-4 py-2 bg-blue-950 hover:bg-red-400 text-white rounded-md cursor-pointer"
-            type="submit"
-            value="Save"
-          />
+          <div class="flex gap-8 items-end">
+            <input
+              class="mt-4 px-4 py-4 bg-blue-950 hover:bg-blue-800 text-white rounded-md cursor-pointer"
+              type="submit"
+              value="Save"
+            />
+            <a
+              class="bg-white p-4 rounded-md hover:bg-red-400 hover:text-white"
+              href="{{request.META.HTTP_REFERER}}"
+            >
+              Cancel
+            </a>
+          </div>
         </form>
-        <div>
+        <div class="flex flex-col justify-around">
           <img
             class="w-full h-80 rounded-md object-cover"
             src="{% static 'imgs/pana-content.png' %}"
-            alt="welcome image"
+            alt="add content image"
+          />
+          <img
+            class="hidden lg:inline w-full h-80 rounded-md object-cover"
+            src="{% static 'imgs/pana-learnlang.png' %}"
+            alt="add content image"
           />
         </div>
       </div>
@@ -107,11 +128,19 @@
             {{field}}
           </div>
           {% endfor %}
-          <input
-            class="mt-4 px-4 py-2 bg-blue-950 hover:bg-red-400 text-white rounded-md cursor-pointer"
-            type="submit"
-            value="Save"
-          />
+          <div class="flex gap-8 items-end">
+            <input
+              class="mt-4 px-4 py-4 bg-blue-950 hover:bg-blue-800 text-white rounded-md cursor-pointer"
+              type="submit"
+              value="Save"
+            />
+            <a
+              class="bg-white p-4 rounded-md hover:bg-red-400 hover:text-white"
+              href="{{request.META.HTTP_REFERER}}"
+            >
+              Cancel
+            </a>
+          </div>
         </form>
         <div>
           <img
