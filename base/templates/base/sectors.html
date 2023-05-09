@@ -1,82 +1,100 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
+<div class="px-8 w-full max-w-[1350px] mx-auto">
+  <!--------------------------------------- mini navbar --------------------------------------->
 
-<!--------------------------------------- category bar --------------------------------------->
-
-{% include 'catbar.html' %}
-
-<!--------------------------------------- mini navbar --------------------------------------->
-
-<nav class="mx-auto py-2 flex gap-2 items-center text-xs w-full max-w-[1350px]">
-  <a
-    class="p-2 hover:bg-gray-100 hover:text-indigo-700 rounded-full transition ease-in duration-200"
-    href="{% url 'home' %}"
-    ><i class="fa-solid fa-house"></i>
-  </a>
-  /
-  <a
-    class="hover:text-indigo-700 hover:underline transition ease-in duration-200"
-    href="{% url 'services' %}"
-    >Services</a
+  <nav
+    class="mx-auto py-2 flex gap-2 items-center text-xs w-full max-w-[1350px]"
   >
-</nav>
-
-<!--------------------------------------- hero section --------------------------------------->
-
-<div
-  class="mb-4 p-10 mx-auto bg-indigo-700 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full max-w-[1350px] rounded-md"
->
-  <article
-    class="flex flex-col text-left justify-between items-start text-left"
-  >
-    <h4 class="mb-2 text-3xl text-white font-bold">We're here to serve.</h4>
-    <p class="text-gray-100">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error suscipit
-      deserunt, consequuntur beatae quae et atque nostrum nulla architecto quia
-      quo ipsum odio provident molestias repellat ea quam quidem ipsa fuga natus
-      neque, nihil ducimus pariatur vitae.
-    </p>
     <a
-      href="#services"
-      class="mt-4 px-8 py-2 rounded-full flex justify-between items-center text-indigo-700 bg-white w-2/6 group"
-      >Explore<i class="hidden fa-solid fa-arrow-down group-hover:inline"></i
-    ></a>
-  </article>
-  <div>
-    <img
-      class="w-full h-80 rounded-md object-cover"
-      src="{% static 'imgs/handshake.jpg' %}"
-      alt="welcome image"
-    />
-  </div>
-</div>
+      class="p-2 hover:bg-gray-100 hover:text-indigo-700 rounded-full transition ease-in duration-200"
+      href="{% url 'home' %}"
+      ><i class="fa-solid fa-house"></i>
+    </a>
+    /
+    <a
+      class="hover:text-indigo-700 hover:underline transition ease-in duration-200"
+      href="{% url 'sectors' %}"
+      >Sectors</a
+    >
+  </nav>
 
-<!--------------------------------------- services --------------------------------------->
-<section id="services" class="py-10 bg-white w-full text-left">
-  <div class="max-w-[1350px] mx-auto">
-    <h3 class="mb-2 mx-auto text-gray-700 text-2xl font-bold">Sevices</h3>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-      {% for serv in services %}
-      <a href="{% url 'service' serv.name%}">
-        <div class="flex flex-col bg-gray-50 hover:shadow-md rounded-md group">
-          {% if serv.image %}
-          <img
-            class="h-[200px] rounded-t-md object-cover"
-            src="{{serv.image.url}}"
-            alt="welcome image"
-          />
-          {% endif %}
-          <div class="px-4 py-2 rounded-b-md">
-            <h4 class="text-black text-md font-bold">{{serv.name}}</h4>
-            <p class="flex items-center justify-between text-indigo-700">
-             &#8358 {{serv.average_cost|floatformat}}
-              <i
-                class="hidden  fa-solid fa-arrow-right group-hover:inline"
-              ></i>
-            </p>
-          </div>
-        </div> </a
-      >{% endfor %}
+  <!--------------------------------------- hero section --------------------------------------->
+
+  <div
+    class="mb-4 p-10 mx-auto bg-red-400 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full max-w-[1350px] rounded-md"
+  >
+    <article
+      class="flex flex-col text-left justify-between items-start text-left"
+    >
+      <h4 class="mb-2 text-3xl text-white font-bold">
+        We teach you, what you need.
+      </h4>
+      <p class="text-gray-100">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error suscipit
+        deserunt, consequuntur beatae quae et atque nostrum nulla architecto
+        quia quo ipsum odio provident molestias repellat ea quam quidem ipsa
+        fuga natus neque, nihil ducimus pariatur vitae.
+      </p>
+      <div class="flex gap-4">
+        <a
+          href="#sectors"
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-white text-blue-950 w-[200px] group"
+          >Explore<i
+            class="hidden fa-solid fa-arrow-down group-hover:inline"
+          ></i
+        ></a>
+        <a
+          href="{% url 'dashboard' %}#secform"
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-blue-950 text-white w-[200px] group"
+          >New sector
+          <i class="hidden fa-solid fa-plus group-hover:inline"></i>
+        </a>
+      </div>
+    </article>
+    <div>
+      <img
+        class="w-full h-80 rounded-md object-cover"
+        src="{% static 'imgs/books.jpg' %}"
+        alt="welcome image"
+      />
     </div>
   </div>
-</section>
+
+  <!--------------------------------------- sectors --------------------------------------->
+  <section id="sectors" class="py-10 bg-white w-full text-left">
+    <div class="max-w-[1350px] mx-auto">
+      <h3 class="mb-4 mx-auto text-gray-700 text-2xl font-bold">
+        Fields of study (Sectors)
+      </h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {% for sec in sectors %}
+        <a href="{% url 'sectors'  %}">
+          <div
+            class="flex flex-col bg-blue-950 hover:shadow-md rounded-md group"
+          >
+            {% if sec.image %}
+            <img
+              class="h-[200px] rounded-t-md object-cover"
+              src="{{sec.image.url}}"
+              alt="welcome image"
+            />
+            {% endif %}
+            <div class="px-4 py-2 rounded-b-md">
+              <h4 class="text-white text-center text-md font-bold">
+                {{sec.name}}
+              </h4>
+              <!-- <p class="flex items-center justify-between text-indigo-700">
+               &#8358 {{sec.average_cost|floatformat}}
+                <i
+                  class="hidden  fa-solid fa-arrow-right group-hover:inline"
+                ></i>
+              </p> -->
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
 {% endblock %}

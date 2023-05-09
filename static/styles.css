@@ -1,3 +1,12 @@
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+/* tables---------------------------------------------------------------------------------------------------- */
+.db-table {
+  border-collapse: collapse;
+}
+
+.db-table tbody tr:nth-of-type(even) {
+  background-color: #e0e7ff;
 }

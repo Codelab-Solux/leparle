@@ -92,6 +92,14 @@ def user_profile(req, pk):
             if form.is_valid():
                 form.save()
                 return redirect('users')
+            
+    if user.role.sec_level >= 2:
+        form = AdminEditUserForm(instance=profile)
+        if req.method == 'POST':
+            form = AdminEditUserForm(req.POST, instance=profile)
+            if form.is_valid():
+                form.save()
+                return redirect('users')
     else:
         form = None
     context = {

@@ -76,6 +76,21 @@ class EditUserForm(forms.ModelForm):
             'role': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
             'sector': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
         }
+class AdminEditUserForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ('__all__')
+        exclude = ('groups', 'user_permissions',
+                   'password', 'last_login', 'is_staff', 'is_superuser', )
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'last_name': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'email': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'username': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'phone': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'role': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'sector': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+        }
 
 
 class RoleForm(forms.ModelForm):

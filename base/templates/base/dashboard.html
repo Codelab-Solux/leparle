@@ -1,0 +1,128 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<div class="px-8 w-full max-w-[1350px] mx-auto">
+  <!--------------------------------------- mini navbar --------------------------------------->
+
+  <nav
+    class="mx-auto py-2 flex gap-2 items-center text-xs w-full lg:max-w-[1350px]"
+  >
+    <a
+      class="p-2 hover:bg-gray-100 hover:text-blue-950 rounded-full transition ease-in duration-200"
+      href="{% url 'home' %}"
+      ><i class="fa-solid fa-house"></i>
+    </a>
+    /
+    <a
+      class="hover:text-blue-950 hover:underline transition ease-in duration-200"
+      href="{% url 'users' %}"
+      >dashboard</a
+    >
+  </nav>
+  <!--------------------------------------- hero section --------------------------------------->
+
+  {% if request.user.role.sec_level >= 3 %}
+  <div class="flex flex-col gap-8">
+    <!-- sector form -->
+    <div id="secform" class="flex flex-col w-full">
+      <h3 class="mb-2 text-black text-2xl font-black">
+        Add a new Field of study (Sector)
+      </h3>
+      <div
+        class="p-10 mx-auto bg-gray-50 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full rounded-md"
+      >
+        <form
+          class="p-4 w-full bg-gray-200 rounded-lg text-sm"
+          method="POST"
+          action=""
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %} {% for field in secform %}
+          <div>
+            <h3 class="mb-1">{{field.label}}</h3>
+            {{field}}
+          </div>
+          {% endfor %}
+          <input
+            class="mt-4 px-4 py-2 bg-blue-950 hover:bg-red-400 text-white rounded-md cursor-pointer"
+            type="submit"
+            value="Save"
+          />
+        </form>
+        <div>
+          <img
+            class="w-full h-80 rounded-md object-cover"
+            src="{% static 'imgs/pana-learner.png' %}"
+            alt="welcome image"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- course form -->
+    <div id="courseform" class="flex flex-col w-full">
+      <h3 class="mb-2 text-black text-2xl font-black">Add a new Course</h3>
+      <div
+        class="p-10 mx-auto bg-gray-50 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full rounded-md"
+      >
+        <form
+          class="p-4 w-full bg-gray-200 rounded-lg text-sm"
+          method="POST"
+          action=""
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %} {% for field in courseform %}
+          <div>
+            <h3 class="mb-1">{{field.label}}</h3>
+            {{field}}
+          </div>
+          {% endfor %}
+          <input
+            class="mt-4 px-4 py-2 bg-blue-950 hover:bg-red-400 text-white rounded-md cursor-pointer"
+            type="submit"
+            value="Save"
+          />
+        </form>
+        <div>
+          <img
+            class="w-full h-80 rounded-md object-cover"
+            src="{% static 'imgs/pana-content.png' %}"
+            alt="welcome image"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- blog form -->
+    <div id="blogform" class="flex flex-col w-full">
+      <h3 class="mb-2 text-black text-2xl font-black">Add a new blogpost</h3>
+      <div
+        class="p-10 mx-auto bg-gray-50 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full rounded-md"
+      >
+        <form
+          class="p-4 w-full bg-gray-200 rounded-lg text-sm"
+          method="POST"
+          action=""
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %} {% for field in blogform %}
+          <div>
+            <h3 class="mb-1">{{field.label}}</h3>
+            {{field}}
+          </div>
+          {% endfor %}
+          <input
+            class="mt-4 px-4 py-2 bg-blue-950 hover:bg-red-400 text-white rounded-md cursor-pointer"
+            type="submit"
+            value="Save"
+          />
+        </form>
+        <div>
+          <img
+            class="w-full h-80 rounded-md object-cover"
+            src="{% static 'imgs/pana-blog.png' %}"
+            alt="welcome image"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

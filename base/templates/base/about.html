@@ -2,14 +2,30 @@
 
 <!--------------------------------------- hero section --------------------------------------->
 
-<section class="mt-20 h-full">
-  <div
-    class="px-8 lg:px-0 max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2"
-  >
+<section class="px-8 max-w-[1350px] mx-auto h-full">
+  <nav class="py-2 flex gap-2 items-center text-xs">
+    <a
+      class="p-2 hover:bg-gray-100 hover:text-blue-950 rounded-full transition ease-in duration-200"
+      href="{% url 'home' %}"
+      ><i class="fa-solid fa-house"></i>
+    </a>
+    /
+    <a
+      class="hover:text-blue-950 hover:underline transition ease-in duration-200"
+      href="{% url 'about' %}"
+      >About</a
+    >
+
+    <span class="text-blue-950 font-black">{{curr_course.title}}</span>
+  </nav>
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <!--------------------------------------- mini navbar --------------------------------------->
+
+    <!--------------------------------------- hero section --------------------------------------->
     <article class="mb-4 mt-40 flex flex-col justify-between">
-      <h1 class="mb-4 text-5xl text-blue-950 font-thin">Qui sommes nous?</h1>
+      <h1 class="mb-4 text-3xl text-blue-950 font-thin">Qui sommes nous?</h1>
       <p>
-        <span class="text-5xl text-blue-950 font-black">Leparle</span>
+        <span class="text-5xl text-red-400 font-black">Leparle</span>
         est une plateforme conçue pour aider les professionnels de différents
         secteurs d’activités à améliorer leur anglais dans un contexte
         professionnel. Nous proposons une grande variété de cours, allant de
@@ -38,7 +54,7 @@
     </article>
     <img
       class="h-[600px] rounded-md object-contain"
-      src="{% static 'imgs/company-amico.png' %}"
+      src="{% static 'imgs/pana-company.png' %}"
       alt="hero image"
     />
   </div>

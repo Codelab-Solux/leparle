@@ -1,5 +1,5 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
-<div class="px-8">
+<div class="px-8 max-w-[1350px] mx-auto">
   <!--------------------------------------- hero section --------------------------------------->
 
   <!-- {% include 'secbar.html' %} -->
@@ -25,7 +25,7 @@
   <!--------------------------------------- hero section --------------------------------------->
 
   <div
-    class="mb-4 p-10 mx-auto bg-blue-950 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full max-w-[1350px] rounded-md"
+    class="mb-4 p-10 mx-auto bg-red-400 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full max-w-[1350px] rounded-md"
   >
     <article
       class="flex flex-col text-left justify-between items-start text-left"
@@ -39,11 +39,21 @@
         quia quo ipsum odio provident molestias repellat ea quam quidem ipsa
         fuga natus neque, nihil ducimus pariatur vitae.
       </p>
-      <a
-        href="#courses"
-        class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-white text-blue-950 w-[200px] group"
-        >Explore<i class="hidden fa-solid fa-arrow-down group-hover:inline"></i
-      ></a>
+      <div class="flex gap-4">
+        <a
+          href="#courses"
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-white text-blue-950 w-[200px] group"
+          >Explore<i
+            class="hidden fa-solid fa-arrow-down group-hover:inline"
+          ></i
+        ></a>
+        <a
+          href="{% url 'dashboard' %}#courseform"
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-blue-950 text-white w-[200px] group"
+          >New course
+          <i class="hidden fa-solid fa-plus group-hover:inline"></i>
+        </a>
+      </div>
     </article>
     <div>
       <img
@@ -58,7 +68,7 @@
   <section id="courses" class="py-20 bg-white w-full text-left">
     <div class="max-w-[1350px] mx-auto">
       <div class="mb-4 flex justify-between items-center">
-        <h3 class="text-gray-700 lg:text-2xl font-bold">Courses for you</h3>
+        <h3 class="text-gray-700 lg:text-2xl font-bold">For you</h3>
         <form
           id="search_box"
           class="w-100 border border-2 border-blue-950 rounded-full flex flex-row max-w-xl justify-between items-fill"
@@ -89,7 +99,6 @@
             <video
               class="h-[300px] rounded-t-md object-contain"
               poster="{% static 'imgs/leparle-gris-lng.png' %}"
-              controls="controls"
               preload="metadata"
             >
               <source src="{{item.video.url}}" type="video/mp4" />

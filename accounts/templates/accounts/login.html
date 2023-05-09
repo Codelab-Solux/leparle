@@ -1,13 +1,15 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 
-<div class="mx-auto flex flex-row items-center justify-center h-[500px]">
+<div
+  class="px-8 mx-auto gap-8 flex flex-col md:px-0 md:flex-row md:h-[500px] items-center justify-between"
+>
   <img
     class="h-full"
-    src="{% static 'imgs/login-amico.png' %}"
+    src="{% static 'imgs/pana-teacher.png' %}"
     alt="welcome image"
   />
-  <div class="flex flex-col">
-    <h1 class="text-bluebg-blue-950 text-3xl font-bold">Connexion</h1>
+  <div class="flex flex-col w-[400px]">
+    <h1 class="text-bluebg-blue-950 text-3xl font-bold">Login here</h1>
     <form method="POST" action="">
       {% csrf_token %}
       <div class="flex flex-col mb-2">
@@ -21,12 +23,12 @@
         />
       </div>
       <div class="flex flex-col mb-4">
-        <label for="password">Mot de passe</label>
+        <label for="password">Password</label>
         <input
           type="password"
           name="password"
           class="mt-2 px-4 py-2 rounded-full bg-gray-100"
-          placeholder="Mot de passe"
+          placeholder="Password"
           required
         />
       </div>
@@ -38,12 +40,12 @@
       />
     </form>
 
-    <!-- <a href="#!" class="forgot-password-link mt-4">Mot de passe oublié?</a> -->
+    <!-- <a href="#!" class="forgot-password-link mt-4">Password oublié?</a> -->
 
-    <p class="login-wrapper-footer-text mt-4">
-      J'ai oublie mon mot de passe
-      <a href="{% url 'signup' %}" class="text-red-400">Cliquez ici</a>
-    </p>
+    <!-- <p class="login-wrapper-footer-text mt-4">
+      J'ai oublie mon Password
+      <a href="{% url 'home' %}" class="text-red-400">Cliquez ici</a>
+    </p> -->
   </div>
 </div>
 {% endblock %}

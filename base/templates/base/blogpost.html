@@ -1,14 +1,12 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
-<div class="px-8">
+<div class="px-8 w-full max-w-[1350px] mx-auto">
   <!--------------------------------------- hero section --------------------------------------->
 
   <!-- {% include 'secbar.html' %} -->
 
   <!--------------------------------------- mini navbar --------------------------------------->
 
-  <nav
-    class="w-full max-w-[1350px] mx-auto py-2 flex gap-2 items-center text-xs"
-  >
+  <nav class="py-2 flex gap-2 items-center text-xs">
     <a
       class="p-2 hover:bg-gray-100 hover:text-blue-950 rounded-full transition ease-in duration-200"
       href="{% url 'home' %}"
@@ -25,9 +23,7 @@
   </nav>
 
   <!--------------------------------------- current course --------------------------------------->
-  <div
-    class="w-full max-w-[1350px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-8"
-  >
+  <div class="flex flex-col lg:flex-row justify-between items-start gap-8">
     <div class="flex flex-col w-full">
       {% if not item.image %}
       <img

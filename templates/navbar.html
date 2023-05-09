@@ -1,21 +1,21 @@
 {% load static %}
 <nav class="text-gray-600 py-4">
   <div
-    class="w-full max-w-[1350px] mx-auto lg:flex lg:items-center justify-between"
+    class="px-8 w-full max-w-[1350px] mx-auto lg:flex lg:items-center justify-between"
   >
-    <div class="flex items-center justify-between px-8 lg:px-0">
+    <div class="flex items-center justify-between">
       <a href="{% url 'home' %}">
         <img
           class="h-10"
           src="{% static 'imgs/leparle-lng.png' %}"
-          alt="FIMO228"
+          alt="Leparle"
         />
       </a>
       <span class="text-xl cursor-pointer lg:hidden">
         <i name="menu" onclick="toggleMenu(this)" class="fa-solid fa-bars"></i>
       </span>
     </div>
-    <div class="hidden mt-8 lg:flex lg:mt-2 items-center" id="navlinks">
+    <div class="hidden lg:flex lg:mt-0 items-center" id="navlinks">
       <ul class="flex flex-col lg:flex-row gap-4 justify-between menu-list">
         <a
           href="{% url 'home' %}"
@@ -33,6 +33,11 @@
           >Courses</a
         >
         {% if user.role.sec_level >= 3 %}
+        <a
+          href="{% url 'sectors' %}"
+          class="hover:text-black px-3 py-2 my-2 w-full"
+          >Sectors</a
+        >
         <a
           href="{% url 'users' %}"
           class="hover:text-black px-3 py-2 my-2 w-full"
@@ -84,12 +89,12 @@
                 ><i class="fa-solid fa-user lg:mr-2"></i>My profile</a>
           
               <a
-                href="#"
+                href="{% url 'dashboard' %}"
                 class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
                 role="menuitem"
                 tabindex="-1"
                 id="user-menu-item-1"
-                ><i class="fa-solid fa-gear lg:mr-2"></i>Settings</a>
+                ><i class="fa-solid fa-bars-progress lg:mr-2"></i>Dashboard</a>
               {% if user.is_superuser %}
               <a
                 class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
@@ -110,7 +115,7 @@
       </div>
       {% else %}
       <a
-      class="ml-4 px-4 py-1 rounded-full border border-2 border-white bg-red-400 text-white transition ease-in duration-200"
+      class="lg:ml-4 px-4 py-1 rounded-full border border-2 border-white bg-red-400 text-white transition ease-in duration-200"
       href="{% url 'login' %}"
       >Login</a>
       {% endif %}

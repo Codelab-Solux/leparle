@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from base.forms import *
 from base.models import *
 
 # Create your views here.
@@ -128,4 +129,50 @@ def blogpost(req, pk):
 
     }
     return render(req, 'base/blogpost.html', context)
+
+
+@login_required(login_url='login')
+def dashboard(req):
+    user = req.user
+    if user.role.sec_level >= 3:
+        sectors = Sector.objects.all()
+        courses = Course.objects.all()
+        blogposts = Blogpost.objects.all()
+
+        secform = SectorForm()
+        if req.method == 'POST':
+            form = SectorForm(req.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('sectors')
+
+        courseform = CourseForm()
+        if req.method == 'POST':
+            form = CourseForm(req.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('courses')
+
+        blogform = BlogpostForm()
+        if req.method == 'POST':
+            form = BlogpostForm(req.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('blog')
+
+    else:
+        return redirect('home')
+    
+    context = {
+        "dashboard_page": "active",
+        'title': 'dashboard',
+        'blogposts': blogposts,
+        'courses': courses,
+        'sectors': sectors,
+        'secform': secform,
+        'courseform': courseform,
+        'blogform': blogform,
+
+    }
+    return render(req, 'base/dashboard.html', context)
 

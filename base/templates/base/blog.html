@@ -1,5 +1,5 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
-<div class="px-8">
+<div class="px-8 max-w-[1350px] mx-auto">
   <!--------------------------------------- hero section --------------------------------------->
 
   <!-- {% include 'secbar.html' %} -->
@@ -39,11 +39,21 @@
         quia quo ipsum odio provident molestias repellat ea quam quidem ipsa
         fuga natus neque, nihil ducimus pariatur vitae.
       </p>
-      <a
-        href="#blogposts"
-        class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-white text-blue-950 w-[200px] group"
-        >Explore<i class="hidden fa-solid fa-arrow-down group-hover:inline"></i
-      ></a>
+      <div class="flex gap-4">
+        <a
+          href="#blogposts"
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-white text-blue-950 w-[200px] group"
+          >Explore<i
+            class="hidden fa-solid fa-arrow-down group-hover:inline"
+          ></i
+        ></a>
+        <a
+          href="{% url 'dashboard' %}#blogform"
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-blue-950 text-white w-[200px] group"
+          >New post
+          <i class="hidden fa-solid fa-plus group-hover:inline"></i>
+        </a>
+      </div>
     </article>
     <div>
       <img
@@ -58,7 +68,7 @@
   <section id="blogposts" class="py-20 bg-white w-full text-left">
     <div class="max-w-[1350px] mx-auto">
       <div class="mb-4 flex justify-between items-center">
-        <h3 class="text-gray-700 lg:text-2xl font-bold">Blogposts for you</h3>
+        <h3 class="text-gray-700 lg:text-2xl font-bold">For you</h3>
         <form
           id="search_box"
           class="w-100 border border-2 border-blue-950 rounded-full flex flex-row max-w-xl justify-between items-fill"
@@ -103,7 +113,7 @@
                 {{item.title|truncatechars:30}}
               </h4>
               <p class="py-2 text-gray-300 text-md">
-                {{item.article|truncatechars:45}}
+                {{item.article|truncatechars:40}}
               </p>
             </div>
           </div> </a
@@ -111,6 +121,10 @@
       </div>
     </div>
   </section>
+
+  {% if user.role.sec_level >= 2 %}
+  <section id="blogform"></section>
+  {% endif %}
 </div>
 
 {% endblock %}
