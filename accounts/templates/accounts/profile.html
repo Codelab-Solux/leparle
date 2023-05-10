@@ -17,7 +17,7 @@
       >Users</a
     >
     /
-    <span>{{profile.first_name}}</span>
+    <span>{{profile.username}}</span>
   </nav>
   <!--------------------------------------- hero section --------------------------------------->
 
@@ -26,13 +26,13 @@
     <img
       class="h-40 w-40 rounded-l-xl object-cover"
       src="{% static 'imgs/anon.png' %}"
-      alt="welcome image"
+      alt="profile"
     />
     {% else %}
     <img
       class="h-40 w-40 rounded-l-xl object-cover"
       src="{{profile.image.url}}"
-      alt="welcome image"
+      alt="profile"
     />
     {% endif %}
     <div

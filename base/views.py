@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from base.forms import *
 from base.models import *
+from django.db.models import Q
 
 # Create your views here.
 
@@ -10,10 +11,19 @@ from base.models import *
 def home(req):
     user = req.user
     sectors = Sector.objects.all()
+    query = req.GET.get('query') if req.GET.get('query') != None else ''
     if user.role.sec_level >= 1:
-        courses = Course.objects.all()
+        courses = Course.objects.filter(
+        Q(title__icontains=query)
+        | Q(subtitle__icontains=query)
+        | Q(sector__name__icontains=query)
+    )
     else:
-        courses = Course.objects.filter(sector=user.sector)
+        courses = Course.objects.filter(
+        Q(title__icontains=query)
+        | Q(subtitle__icontains=query), sector=user.sector
+    )
+        
     context = {
         "home_page": "active",
         'title': 'home',
@@ -67,10 +77,18 @@ def sector_details(req, pk):
 def courses(req):
     user = req.user
     sectors = Sector.objects.all()
+    query = req.GET.get('query') if req.GET.get('query') != None else ''
     if user.role.sec_level >= 1:
-        courses = Course.objects.all()
+        courses = Course.objects.filter(
+        Q(title__icontains=query)
+        | Q(subtitle__icontains=query)
+        | Q(sector__name__icontains=query)
+    )
     else:
-        courses = Course.objects.filter(sector=user.sector)
+        courses = Course.objects.filter(
+        Q(title__icontains=query)
+        | Q(subtitle__icontains=query), sector=user.sector
+    )
 
     context = {
         "home_page": "active",
@@ -101,10 +119,18 @@ def course_details(req, pk):
 @login_required(login_url='login')
 def blog(req):
     user = req.user
+    query = req.GET.get('query') if req.GET.get('query') != None else ''
     if user.role.sec_level >= 1:
-        blogposts = Blogpost.objects.all()
+        blogposts = Blogpost.objects.filter(
+        Q(title__icontains=query)
+        | Q(subtitle__icontains=query)
+        | Q(sector__name__icontains=query)
+    )
     else:
-        blogposts = Blogpost.objects.filter(sector=user.sector)
+        blogposts = Blogpost.objects.filter(
+        Q(title__icontains=query)
+        | Q(subtitle__icontains=query), sector=user.sector
+    )
 
     context = {
         "blog_page": "active",
@@ -161,7 +187,7 @@ def dashboard(req):
                 return redirect('blog')
 
     else:
-        return redirect('home')
+        return redirect(req.META.get('HTTP_REFERER'))
     
     context = {
         "dashboard_page": "active",

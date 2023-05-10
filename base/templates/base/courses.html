@@ -39,20 +39,23 @@
         quia quo ipsum odio provident molestias repellat ea quam quidem ipsa
         fuga natus neque, nihil ducimus pariatur vitae.
       </p>
-      <div class="flex flex-col md:flex-row gap-y-2 gap-x-4">
+      <div class="flex gap-x-4">
         <a
           href="#courses"
-          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-white text-blue-950 w-[200px] group"
-          >Explore<i
-            class="hidden fa-solid fa-arrow-down group-hover:inline"
-          ></i
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-white text-blue-950"
+        >
+          <span class="hidden md:inline"> Explore </span>
+          <i class="fa-solid fa-arrow-down md:ml-4"></i
         ></a>
+        {% if user.role.sec_level >= 3 %}
         <a
           href="{% url 'dashboard' %}#courseform"
-          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-blue-950 text-white w-[200px] group"
-          >New course
-          <i class="hidden fa-solid fa-plus group-hover:inline"></i>
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-blue-950 text-white"
+        >
+          <span class="hidden md:inline"> New course </span>
+          <i class="fa-solid fa-arrow-right md:ml-4"></i>
         </a>
+        {% endif %}
       </div>
     </article>
     <div>
@@ -98,7 +101,7 @@
             {% if item.video %}
             <video
               class="h-[300px] rounded-t-md object-contain"
-              poster="{% static 'imgs/leparle-gris-lng.png' %}"
+              poster="{% static 'imgs/leparle-grey-lng.png' %}"
               preload="metadata"
             >
               <source src="{{item.video.url}}" type="video/mp4" />

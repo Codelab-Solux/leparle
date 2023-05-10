@@ -1,17 +1,17 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 <!--------------------------------------- hero section --------------------------------------->
 
-<section class="mt-20 h-100 md:h-[600px]">
+<section class="mt-10 h-100 md:h-[600px]">
   <div
-    class="px-8 max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
+    class="px-8 max-w-[1350px] h-full mx-h-[1000px] mx-auto flex flex-col-reverse flex-reverse md:flex-row items-center justify-evenly"
   >
-    <div class="flex flex-col">
-      <article class="mb-4 mt-40 flex flex-col justify-between">
+    <div class="flex flex-col mb-8">
+      <article class="mb-4 mt-10 flex flex-col justify-between">
         <h1 class="mb-4 text-5xl font-light">
           Learn to
-          <span class="italic text-blue-950 font-black"> Speak English </span>
+          <span class="text-blue-950 font-black"> Speak English </span>
           <br />
-          like a pro.
+          like a <span class="text-red-400 font-black"> pro </span>.
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
@@ -29,7 +29,7 @@
           name="query"
           id="querier"
           required
-          class="px-6 py-0 rounded-l-full bg-white text-black w-full h-full"
+          class="px-6 py-3 rounded-l-full bg-white text-black w-full h-full"
           placeholder="Find courses..."
         />
         <button
@@ -39,14 +39,27 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
-      <a
-        href="#courses"
-        class="mt-4 px-8 py-2 rounded-full flex justify-between items-center text-white bg-blue-950 w-[200px] group"
-        >Explore<i class="hidden fa-solid fa-arrow-down group-hover:inline"></i
-      ></a>
+      <div class="flex gap-x-4">
+        <a
+          href="#courses"
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-blue-950 text-white"
+        >
+          <span class="hidden md:inline"> Explore </span>
+          <i class="fa-solid fa-arrow-down md:ml-4"></i
+        ></a>
+        {% if user.role.sec_level >= 3 %}
+        <a
+          href="{% url 'dashboard' %}"
+          class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-red-400 text-white"
+        >
+          <span class="hidden md:inline"> Dashboard </span>
+          <i class="fa-solid fa-arrow-right md:ml-4"></i>
+        </a>
+        {% endif %}
+      </div>
     </div>
     <img
-      class="h-[600px] rounded-md object-contain"
+      class="h-full max-h-[600px] rounded-md object-contain"
       src="{% static 'imgs/pana-teacher.png' %}"
       alt="hero image"
     />
@@ -77,7 +90,7 @@
           {% if item.video %}
           <video
             class="h-[300px] rounded-t-md object-contain"
-            poster="{% static 'imgs/leparle-gris-lng.png' %}"
+            poster="{% static 'imgs/leparle-grey-lng.png' %}"
             preload="metadata"
           >
             <source src="{{item.video.url}}" type="video/mp4" />

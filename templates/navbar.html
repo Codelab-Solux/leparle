@@ -51,73 +51,75 @@
         >
       </ul>
       {% if user.is_authenticated %}
-      <div
-          class="lg:ml-4"
-        >
-          <div class="relative">
-                <button
-              type="button"
-              class=""
-              name="dropdownBtn"
-              id="dropdownBtn"
-              aria-expanded="false"
-              aria-haspopup="true"
-              onclick="toggleDropdown(this)"
-            >
-            <i class="fa-solid fa-user text-red-400 text-2xl"></i>
-                      <!-- <img
+      <div class="lg:ml-4">
+        <div class="relative">
+          <button
+            type="button"
+            class=""
+            name="dropdownBtn"
+            id="dropdownBtn"
+            aria-expanded="false"
+            aria-haspopup="true"
+            onclick="toggleDropdown(this)"
+          >
+            <i class="fa-solid fa-user text-red-400 text-2xl ml-6 lg:ml-4"></i>
+            <!-- <img
             class="hidden lg:block lg:h-6 rounded-full ring-offset-2 ring-4 hover:ring-white"
             src="{% static 'imgs/rand.webp' %}"
             alt="Rounded avatar"
           /> -->
-          
-            </button>
-      
-            <div
-              class="p-2  bg-red-100 w-[200px] shadow-lg hidden absolute right-0 top-10 origin-top-left my-2 z-30 rounded-lg flex flex-col"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="user-menu-button"
+          </button>
+
+          <div
+            class="p-2 bg-red-100 w-[200px] shadow-lg hidden absolute right-0 top-10 origin-top-left my-2 z-30 rounded-lg flex flex-col"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="user-menu-button"
+            tabindex="-1"
+            id="dropdownMenu"
+          >
+            <a
+              href="{% url 'user_profile' user.id  %}"
+              class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
+              role="menuitem"
               tabindex="-1"
-              id="dropdownMenu"
+              id="user-menu-item-0"
+              ><i class="fa-solid fa-user mr-2"></i>My profile</a
             >
-              <a href="{% url 'user_profile' user.id  %}"
-                class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
-                role="menuitem"
-                tabindex="-1"
-                id="user-menu-item-0"
-                ><i class="fa-solid fa-user lg:mr-2"></i>My profile</a>
-          
-              <a
-                href="{% url 'dashboard' %}"
-                class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
-                role="menuitem"
-                tabindex="-1"
-                id="user-menu-item-1"
-                ><i class="fa-solid fa-bars-progress lg:mr-2"></i>Dashboard</a>
-              {% if user.is_superuser %}
+            {% if user.role.sec_level >= 3 %}
+            <a
+              href="{% url 'dashboard' %}"
+              class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
+              role="menuitem"
+              tabindex="-1"
+              id="user-menu-item-1"
+              ><i class="fa-solid fa-bars-progress mr-2"></i>Dashboard</a
+            >
+            {% endif %}
+            <!-- {% if user.is_superuser %}
               <a
                 class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
                 href="{% url 'admin:index' %}"
-                ><i class="fa-solid fa-lock lg:mr-2"></i> <span class="hidden lg:inline ">Super Admin</a></span>
-              {% endif %}
-              
-              <a
-                href="{% url 'logout' %}"
-                class="inline px-2 lg:px-4 py-2 text-sm text-red-700 hover:bg-red-700 hover:text-white rounded-md"
-                role="menuitem"
-                tabindex="-1"
-                id="user-menu-item-2"
-                ><i class="fa-solid fa-right-from-bracket lg:mr-2"></i>Logout</a>
-          
-            </div>
+                ><i class="fa-solid fa-lock mr-2">Super Admin</a>
+              {% endif %} -->
+
+            <a
+              href="{% url 'logout' %}"
+              class="inline px-2 lg:px-4 py-2 text-sm text-red-700 hover:bg-red-700 hover:text-white rounded-md"
+              role="menuitem"
+              tabindex="-1"
+              id="user-menu-item-2"
+              ><i class="fa-solid fa-right-from-bracket mr-2"></i>Logout</a
+            >
           </div>
+        </div>
       </div>
       {% else %}
       <a
-      class="lg:ml-4 px-4 py-1 rounded-full border border-2 border-white bg-red-400 text-white transition ease-in duration-200"
-      href="{% url 'login' %}"
-      >Login</a>
+        class="lg:ml-4 px-4 py-1 rounded-full border border-2 border-white bg-red-400 text-white transition ease-in duration-200"
+        href="{% url 'login' %}"
+        >Login</a
+      >
       {% endif %}
     </div>
   </div>

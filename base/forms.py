@@ -7,7 +7,7 @@ class SectorForm(forms.ModelForm):
         fields = ('__all__')
         widgets = {
             'name': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-            'description': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
+            'description': forms.Textarea(attrs={"rows": "5", 'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
  }
         
 class CourseForm(forms.ModelForm):

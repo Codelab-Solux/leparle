@@ -60,16 +60,20 @@ def logoutUser(req):
 
 @login_required(login_url='login')
 def users(req):
+    user=req.user
     users = CustomUser.objects.all()
     ordering = ['last_name']
-
-    form = NewUserForm()
-    if req.method == 'POST':
-        form = NewUserForm(req.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(req, "New user added successfully.")
-            return redirect('users')
+    if user.role.sec_level >= 1:
+        form = NewUserForm()
+        if req.method == 'POST':
+            form = NewUserForm(req.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(req, "New user added successfully.")
+                return redirect('users')
+    else:
+        return redirect(req.META.get('HTTP_REFERER'))
+    
     context = {
         "users_page": "active",
         'title': 'users',
@@ -99,7 +103,7 @@ def user_profile(req, pk):
             form = AdminEditUserForm(req.POST, instance=profile)
             if form.is_valid():
                 form.save()
-                return redirect('users')
+                return redirect(req.META.get('HTTP_REFERER'))
     else:
         form = None
     context = {
