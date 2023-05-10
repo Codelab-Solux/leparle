@@ -1,14 +1,12 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 
-<div
-  class="px-8 mx-auto gap-8 flex flex-col md:px-0 md:flex-row md:h-[500px] items-center justify-between"
->
+<div class="px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full">
   <img
-    class="h-full"
+    class="h-80 md-h-full"
     src="{% static 'imgs/pana-teacher.png' %}"
     alt="welcome image"
   />
-  <div class="flex flex-col w-[400px]">
+  <div class="flex flex-col w-full max-w-[400px]">
     <h1 class="text-bluebg-blue-950 text-3xl font-bold">Login here</h1>
     <form method="POST" action="">
       {% csrf_token %}
