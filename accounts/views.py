@@ -43,7 +43,11 @@ def loginView(req):
 
         if user is not None:
             login(req, user)
-            return redirect('home')
+            if 'next' in req.POST:
+                return redirect(req.POST.get('next'))
+
+            else:
+                return redirect('home')
         else:
             messages.info(req, 'Username or Password is incorrect!')
     context = {
@@ -60,7 +64,7 @@ def logoutUser(req):
 
 @login_required(login_url='login')
 def users(req):
-    user=req.user
+    user = req.user
     users = CustomUser.objects.all()
     ordering = ['last_name']
     if user.role.sec_level >= 1:
@@ -73,7 +77,7 @@ def users(req):
                 return redirect('users')
     else:
         return redirect(req.META.get('HTTP_REFERER'))
-    
+
     context = {
         "users_page": "active",
         'title': 'users',
@@ -96,7 +100,7 @@ def user_profile(req, pk):
             if form.is_valid():
                 form.save()
                 return redirect('users')
-            
+
     if user.role.sec_level >= 2:
         form = AdminEditUserForm(instance=profile)
         if req.method == 'POST':

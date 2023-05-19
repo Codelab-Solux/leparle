@@ -3,34 +3,6 @@ from .models import *
 from django import forms
 
 
-# class SignupForm(UserCreationForm):
-
-#     def __init__(self, *args, **kwargs) -> None:
-#         super().__init__(*args, **kwargs)
-#         self.fields["username"].help_text = ''
-#         self.fields["email"].help_text = ''
-#         self.fields["first_name"].help_text = ''
-#         self.fields["last_name"].help_text = ''
-#         self.fields["phone"].help_text = ''
-#         self.fields["password1"].help_text = ''
-#         self.fields["password2"].help_text = ''
-
-#     class Meta:
-#         model = CustomUser
-#         fields = (
-#             'username', 'email', 'first_name', 'last_name', 'password1', 'password2',
-#         )
-#         widgets = {
-#             'username': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-#             'email': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-#             'first_name': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-#             'last_name': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-#             'phone': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-#             'password1': forms.PasswordInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-#             'password2': forms.PasswordInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
-#         }
-
-
 class NewUserForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs) -> None:

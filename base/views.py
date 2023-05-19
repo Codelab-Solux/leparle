@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from base.forms import *
-from base.models import *
+from .forms import *
+from .models import *
 from django.db.models import Q
 
 # Create your views here.
