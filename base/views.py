@@ -14,16 +14,16 @@ def home(req):
     query = req.GET.get('query') if req.GET.get('query') != None else ''
     if user.role.sec_level >= 1:
         courses = Course.objects.filter(
-        Q(title__icontains=query)
-        | Q(subtitle__icontains=query)
-        | Q(sector__name__icontains=query)
-    )
+            Q(title__icontains=query)
+            | Q(subtitle__icontains=query)
+            | Q(sector__name__icontains=query)
+        )
     else:
         courses = Course.objects.filter(
-        Q(title__icontains=query)
-        | Q(subtitle__icontains=query), sector=user.sector
-    )
-        
+            Q(title__icontains=query)
+            | Q(subtitle__icontains=query), sector=user.sector
+        )
+
     context = {
         "home_page": "active",
         'title': 'home',
@@ -33,6 +33,7 @@ def home(req):
     }
     return render(req, 'base/index.html', context)
 
+
 @login_required(login_url='login')
 def about(req):
     context = {
@@ -41,6 +42,7 @@ def about(req):
 
     }
     return render(req, 'base/about.html', context)
+
 
 @login_required(login_url='login')
 def sectors(req):
@@ -60,14 +62,13 @@ def sectors(req):
 @login_required(login_url='login')
 def sector_details(req, pk):
     user = req.user
-    curr_sector = Course.objects.get(id=pk)
+    curr_sector = Sector.objects.get(id=pk)
     rel_courses = Course.objects.filter(sector=curr_sector)
-    sectors = Sector.objects.all()
     context = {
-        "courses_page": "active",
-        'title': 'courses',
+        "sector_page": "active",
+        'title': 'sector_detail',
         'rel_courses': rel_courses,
-        'sectors': sectors,
+        'curr_sector': curr_sector,
 
     }
     return render(req, 'base/sector.html', context)
@@ -80,15 +81,15 @@ def courses(req):
     query = req.GET.get('query') if req.GET.get('query') != None else ''
     if user.role.sec_level >= 1:
         courses = Course.objects.filter(
-        Q(title__icontains=query)
-        | Q(subtitle__icontains=query)
-        | Q(sector__name__icontains=query)
-    )
+            Q(title__icontains=query)
+            | Q(subtitle__icontains=query)
+            | Q(sector__name__icontains=query)
+        )
     else:
         courses = Course.objects.filter(
-        Q(title__icontains=query)
-        | Q(subtitle__icontains=query), sector=user.sector
-    )
+            Q(title__icontains=query)
+            | Q(subtitle__icontains=query), sector=user.sector
+        )
 
     context = {
         "home_page": "active",
@@ -98,6 +99,7 @@ def courses(req):
 
     }
     return render(req, 'base/courses.html', context)
+
 
 @login_required(login_url='login')
 def course_details(req, pk):
@@ -122,15 +124,15 @@ def blog(req):
     query = req.GET.get('query') if req.GET.get('query') != None else ''
     if user.role.sec_level >= 1:
         blogposts = Blogpost.objects.filter(
-        Q(title__icontains=query)
-        | Q(subtitle__icontains=query)
-        | Q(sector__name__icontains=query)
-    )
+            Q(title__icontains=query)
+            | Q(subtitle__icontains=query)
+            | Q(sector__name__icontains=query)
+        )
     else:
         blogposts = Blogpost.objects.filter(
-        Q(title__icontains=query)
-        | Q(subtitle__icontains=query), sector=user.sector
-    )
+            Q(title__icontains=query)
+            | Q(subtitle__icontains=query), sector=user.sector
+        )
 
     context = {
         "blog_page": "active",
@@ -139,6 +141,7 @@ def blog(req):
 
     }
     return render(req, 'base/blog.html', context)
+
 
 @login_required(login_url='login')
 def blogpost(req, pk):
@@ -188,7 +191,7 @@ def dashboard(req):
 
     else:
         return redirect(req.META.get('HTTP_REFERER'))
-    
+
     context = {
         "dashboard_page": "active",
         'title': 'dashboard',
@@ -201,4 +204,3 @@ def dashboard(req):
 
     }
     return render(req, 'base/dashboard.html', context)
-

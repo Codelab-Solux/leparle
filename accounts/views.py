@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from accounts.models import CustomUser
-from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
@@ -19,7 +18,7 @@ from .forms import *
 #         form = SignupForm(req.POST)
 #         if form.is_valid():
 #             form.save()
-#             messages.success(req, "Votre compte vien d'être créé.")
+#             users.success(req, "Votre compte vien d'être créé.")
 #             return redirect('login')
 #     else:
 #         form = SignupForm()
@@ -49,7 +48,7 @@ def loginView(req):
             else:
                 return redirect('home')
         else:
-            messages.info(req, 'Username or Password is incorrect!')
+            users.info(req, 'Username or Password is incorrect!')
     context = {
         "login_page": "active",
         "title": 'login'}
@@ -73,7 +72,7 @@ def users(req):
             form = NewUserForm(req.POST)
             if form.is_valid():
                 form.save()
-                messages.success(req, "New user added successfully.")
+                users.success(req, "New user added successfully.")
                 return redirect('users')
     else:
         return redirect(req.META.get('HTTP_REFERER'))
@@ -117,3 +116,15 @@ def user_profile(req, pk):
         'form': form,
     }
     return render(req, 'accounts/profile.html', context)
+
+
+@login_required(login_url='login')
+def delete_user(req, pk):
+    if req.user.role.sec_level < 3:
+        return redirect(req.META.get('HTTP_REFERER', '/'))
+    else:
+        user = CustomUser.objects.filter(id=pk)
+        if not user:
+            return HttpResponseRedirect(req.META.get('HTTP_REFERER'))
+        user.delete()
+        return HttpResponseRedirect(req.META.get('HTTP_REFERER'))

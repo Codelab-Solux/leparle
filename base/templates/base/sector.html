@@ -1,107 +1,96 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
+<div class="px-8 w-full max-w-[1350px] mx-auto">
+  <!--------------------------------------- mini navbar --------------------------------------->
 
-<!--------------------------------------- category bar --------------------------------------->
-
-{% include 'catbar.html' %}
-
-<!--------------------------------------- mini navbar --------------------------------------->
-
-<nav class="mx-auto py-2 flex gap-2 items-center text-xs w-full max-w-[1350px]">
-  <a
-    class="p-2 hover:bg-gray-100 hover:text-indigo-700 rounded-full transition ease-in duration-200"
-    href="{% url 'home' %}"
-    ><i class="fa-solid fa-house"></i>
-  </a>
-  /
-  <a
-    class="hover:text-indigo-700 hover:underline transition ease-in duration-200"
-    href="{% url 'services' %}"
-    >Services</a
+  <nav
+    class="mx-auto py-2 flex gap-2 items-center text-xs w-full max-w-[1350px]"
   >
-  /
-  <a
-    class="hover:text-indigo-700 hover:underline transition ease-in duration-200"
-    href="{% url 'services' %}"
-    >{{curr_service.name}}</a
-  >
-</nav>
+    <a
+      class="p-2 hover:bg-gray-100 hover:text-indigo-700 rounded-full transition ease-in duration-200"
+      href="{% url 'home' %}"
+      ><i class="fa-solid fa-house"></i>
+    </a>
+    /
+    <a
+      class="hover:text-indigo-700 hover:underline transition ease-in duration-200"
+      href="{% url 'sectors' %}"
+      >Sectors</a
+    >
+    /
+    <a
+      class="hover:text-indigo-700 hover:underline transition ease-in duration-200"
+      href="{% url 'sectors' %}"
+      >{{curr_sector.name}}</a
+    >
+  </nav>
 
-<!--------------------------------------- hero section --------------------------------------->
+  <!--------------------------------------- hero section --------------------------------------->
 
-<div
-  class="mb-4 p-10 mx-auto bg-gray-100 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full max-w-[1350px] rounded-md"
->
-  <article
-    class="flex flex-col text-left justify-between items-start text-left"
+  <div
+    class="mb-4 p-10 mx-auto bg-gray-100 grid grid-cols-1 md:grid-cols-2 gap-x-20 w-full max-w-[1350px] rounded-md"
   >
-    <h4 class="mb-2 text-3xl text-black font-bold">{{curr_service.name}}</h4>
-    <p class="text-gray-600">{{curr_service.description}}</p>
-    <p class="text-gray-600">
-      Average cost of service:
-      <span class="text-indigo-700 text-2xl"
-        > &#8358 {{curr_service.average_cost|floatformat }}</span
-      >
-    </p>
-    <div class="flex gap-4 w-full">
+    <article
+      class="flex flex-col text-left justify-between items-start text-left"
+    >
+      <h4 class="mb-2 text-3xl text-black font-bold">{{curr_sector.name}}</h4>
+      <p class="text-gray-600">{{curr_sector.description}}</p>
+
       <a
-        href="#services"
+        href="#sectors"
         class="mt-4 px-8 py-2 rounded-full flex justify-between items-center bg-white w-2/6 group"
         >Explore<i class="hidden fa-solid fa-arrow-down group-hover:inline"></i
       ></a>
-
-      <a
-        href="#services"
-        class="mt-4 px-8 py-2 rounded-full flex justify-between items-center bg-indigo-700 text-white w-2/6 group"
-        >Get a quote<i class="hidden fa-solid fa-arrow-right group-hover:inline"></i
-      ></a>
+    </article>
+    <div>
+      {% if curr_sector.image %}
+      <img
+        class="w-full h-80 rounded-md object-cover"
+        src="{{curr_sector.image.url}}"
+        alt="welcome image"
+      />
+      {% else %}
+      <img
+        class="w-full h-80 rounded-md object-cover"
+        src="{% static 'imgs/studies.jpg' %}"
+        alt="welcome image"
+      />
+      {% endif %}
     </div>
-  </article>
-  <div>
-    {% if curr_service.image %}
-    <img
-      class="w-full h-80 rounded-md object-cover"
-      src="{{curr_service.image.url}}"
-      alt="welcome image"
-    />
-    {% else %}
-    <img
-      class="w-full h-80 rounded-md object-cover"
-      src="{% static 'imgs/handshake.jpg' %}"
-      alt="welcome image"
-    />
-    {% endif %}
   </div>
+
+  <!--------------------------------------- related sectors --------------------------------------->
+  <section id="sectors" class="py-10 bg-white w-full text-left">
+    <div class="max-w-[1350px] mx-auto">
+      <h3 class="mb-2 mx-auto text-gray-700 text-2xl font-bold">
+        Related Courses
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for item in rel_courses %}
+        <a href="{% url 'course' item.id  %}">
+          <div
+            class="flex flex-col bg-blue-950 hover:shadow-md rounded-md group"
+          >
+            {% if item.video %}
+            <video
+              class="h-[300px] rounded-t-md object-contain"
+              poster="{% static 'imgs/leparle-grey-lng.png' %}"
+              preload="metadata"
+            >
+              <source src="{{item.video.url}}" type="video/mp4" />
+            </video>
+            {% endif %}
+            <div class="p-4 flex flex-col justify-between">
+              <h4 class="text-white text-xl font-bold">
+                {{item.title|truncatechars:20}}
+              </h4>
+              <p class="py-2 text-gray-300 text-md">
+                {{item.subtitle|truncatechars:35}}
+              </p>
+            </div>
+          </div> </a
+        >{% endfor %}
+      </div>
+    </div>
+  </section>
 </div>
-
-<!--------------------------------------- related services --------------------------------------->
-<section id="services" class="py-10 bg-white w-full text-left">
-  <div class="max-w-[1350px] mx-auto">
-    <h3 class="mb-2 mx-auto text-gray-700 text-2xl font-bold">
-      Related Sevices
-    </h3>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-      {% for serv in rel_services %}
-<a href="{% url 'service' serv.name%}">       
-   <div class="flex flex-col bg-gray-50 hover:shadow-md rounded-md group">
-          {% if serv.image %}
-          <img
-            class="h-[200px] rounded-t-md object-cover"
-            src="{{serv.image.url}}"
-            alt="welcome image"
-          />
-          {% endif %}
-          <div class="px-4 py-2 rounded-b-md">
-            <h4 class="text-black text-md font-bold">{{serv.name}}</h4>
-            <p class="flex items-center  text-indigo-700 justify-between">
-              &#8358 {{serv.average_cost|floatformat}}
-              <i
-                class="hidden fa-solid fa-arrow-right group-hover:inline"
-              ></i>
-            </p>
-          </div>
-        </div> </a
-      >{% endfor %}
-    </div>
-  </div>
-</section>
 {% endblock %}

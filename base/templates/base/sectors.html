@@ -48,7 +48,7 @@
           href="{% url 'dashboard' %}#secform"
           class="my-4 px-8 py-2 rounded-full flex justify-between items-center bg-blue-950 text-white"
         >
-          <span class="hidden md:inline"> New course </span>
+          <span class="hidden md:inline"> New Sector </span>
           <i class="fa-solid fa-arrow-right md:ml-4"></i>
         </a>
         {% endif %}
@@ -71,7 +71,7 @@
       </h3>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {% for sec in sectors %}
-        <a href="{% url 'sectors'  %}">
+        <a href="{% url 'sector' sec.id  %}">
           <div
             class="flex flex-col bg-blue-950 hover:shadow-md rounded-md group"
           >

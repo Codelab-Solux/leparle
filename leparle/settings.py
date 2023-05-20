@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
+
 from pathlib import Path
 # import django_heroku
 import dj_database_url
@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d%ogm+6l=7q+6!5+1x0r#=-58tx5zd58*x6xsm2gfb(@3q_ik8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,22 +86,22 @@ WSGI_APPLICATION = 'leparle.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://leparle_user:aQzlmJubZhvEuS0DHEn6TOcpyUwr5zaU@dpg-chdl4vu7avj0djhovptg-a.ohio-postgres.render.com/leparle')
+    # 'default': dj_database_url.parse('postgres://leparle_user:aQzlmJubZhvEuS0DHEn6TOcpyUwr5zaU@dpg-chdl4vu7avj0djhovptg-a.ohio-postgres.render.com/leparle')
     # 'default': dj_database_url.parse(env('DB_URL'))
 
-    # 'default': {
+    'default': {
 
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'leparle',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'password',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'leparle',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432',
 
-    #     # 'ENGINE': 'django.db.backends.sqlite3',
-    #     # 'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
 
-    # }
+    }
 }
 
 

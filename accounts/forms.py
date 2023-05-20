@@ -6,19 +6,14 @@ from django import forms
 class NewUserForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
-        self.fields["username"].help_text = ''
-        self.fields["email"].help_text = ''
-        self.fields["first_name"].help_text = ''
-        self.fields["last_name"].help_text = ''
-        self.fields["phone"].help_text = ''
-        self.fields["password1"].help_text = ''
-        self.fields["password2"].help_text = ''
+        super(NewUserForm, self).__init__(*args, **kwargs)
+        self.fields['password1'].widget.attrs['class'] = "mb-2 px-4 py-2 rounded-md bg-white w-full"
+        self.fields['password2'].widget.attrs['class'] = "mb-2 px-4 py-2 rounded-md bg-white w-full"
 
     class Meta:
         model = CustomUser
         fields = (
-            'username', 'email', 'first_name', 'last_name', 'phone', 'password1', 'password2', 'role','sector'
+            'username', 'email', 'first_name', 'last_name', 'phone', 'password1', 'password2', 'role', 'sector'
         )
         widgets = {
             'username': forms.TextInput(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
@@ -48,6 +43,8 @@ class EditUserForm(forms.ModelForm):
             'role': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
             'sector': forms.Select(attrs={'class': "mb-2 px-4 py-2 rounded-md bg-white w-full"}),
         }
+
+
 class AdminEditUserForm(forms.ModelForm):
     class Meta:
         model = CustomUser
@@ -66,7 +63,6 @@ class AdminEditUserForm(forms.ModelForm):
 
 
 class RoleForm(forms.ModelForm):
-
 
     class Meta:
         model = Role

@@ -95,13 +95,13 @@
               id="user-menu-item-1"
               ><i class="fa-solid fa-bars-progress mr-2"></i>Dashboard</a
             >
+            {% endif %} {% if user.is_superuser %}
+            <a
+              class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
+              href="{% url 'admin:index' %}"
+              ><i class="fa-solid fa-lock mr-2"></i>Super Admin</a
+            >
             {% endif %}
-            <!-- {% if user.is_superuser %}
-              <a
-                class="inline px-2 lg:px-4 py-2 text-sm text-gray-700 hover:bg-white rounded-md"
-                href="{% url 'admin:index' %}"
-                ><i class="fa-solid fa-lock mr-2">Super Admin</a>
-              {% endif %} -->
 
             <a
               href="{% url 'logout' %}"

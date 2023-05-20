@@ -61,10 +61,12 @@
               <th class="p-4 text-sm">Email</th>
               <th class="p-4 text-sm">Sector</th>
               <th class="p-4 text-sm">Role</th>
+              <th class="p-4 text-sm">Actions</th>
             </tr>
           </thead>
           <tbody>
             {% for e in users %}
+
             <tr
               class="text-gray-500 hover:text-black cursor-pointer transition-all duration-50"
             >
@@ -74,6 +76,19 @@
               <td class="p-3">{{e.email}}</td>
               <td class="p-3">{{e.sector}}</td>
               <td class="p-3">{{e.role}}</td>
+              <td class="flex justify-around p-3">
+                <a href="{% url 'user_profile' e.id  %}"
+                  ><i class="fa-solid fa-eye"></i
+                ></a>
+                {% if user.role.sec_level >= 3 %}
+                <a
+                  id="delete_btn"
+                  onclick="return confirm('Voulez vous supprimer le compte de cet utilisateur?')"
+                  href="{% url 'delete_user' e.id  %}"
+                  ><i class="fa-solid fa-trash hover:text-red-700"></i
+                ></a>
+                {% endif %}
+              </td>
             </tr>
             {% endfor %}
           </tbody>
